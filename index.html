@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanos Engraving | Ethiopian Leather & Wood Crafts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#D2B48C',
+                        accent: '#A0522D',
+                        light: '#F5F5DC',
+                        dark: '#3E2723',
+                        text: '#333333',
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-poppins text-text bg-light;
+            }
+            h1, h2, h3, h4 {
+                @apply font-playfair font-semibold;
+            }
+        }
+        @layer utilities {
+            .transition-smooth {
+                transition: all 0.3s ease;
+            }
+            .product-card:hover .product-img img {
+                transform: scale(1.1);
+            }
+            .gallery-item:hover img {
+                transform: scale(1.1);
+            }
+            .gallery-item:hover::after {
+                opacity: 1;
+            }
+            .dropdown:hover .dropdown-content {
+                @apply opacity-100 visible translate-y-0;
+            }
+            .ethiopian-pattern {
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a0522d' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+            .about-bg {
+                background: linear-gradient(rgba(245, 245, 220, 0.95), rgba(245, 245, 220, 0.95)), url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23a0522d' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            }
+            .contact-bg {
+                background: linear-gradient(rgba(245, 245, 220, 0.9), rgba(245, 245, 220, 0.9)), url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23a0522d' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            }
+            .timeline::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 4px;
+                background: #8B4513;
+            }
+            .timeline-item:nth-child(odd) .timeline-content::after {
+                content: '';
+                position: absolute;
+                right: -15px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-left: 15px solid #8B4513;
+            }
+            .timeline-item:nth-child(even) .timeline-content::after {
+                content: '';
+                position: absolute;
+                left: -15px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-right: 15px solid #8B4513;
+            }
+            .mobile-menu {
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            .mobile-menu.active {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="ethiopian-pattern">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="bg-dark text-white text-center py-2 text-sm hidden md:block">
+            <p>FREE DELIVERY IN ADDIS | ETHIOPIAN HANDCRAFTED MASTERPIECES</p>
+        </div>
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="lg:hidden text-text focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Left Navigation - Desktop -->
+            <nav class="hidden lg:flex flex-1">
+                <ul class="flex space-x-4 lg:space-x-8">
+                    <li><a href="#home" class="text-text hover:text-accent font-medium transition-smooth">Home</a></li>
+                    <li class="dropdown relative">
+                        <a href="#shop" class="text-text hover:text-accent font-medium transition-smooth flex items-center">
+                            Shop <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <div class="dropdown-content absolute top-full left-0 bg-white min-w-[200px] shadow-lg rounded-md mt-2 opacity-0 invisible translate-y-4 transition-smooth">
+                            <a href="#leather" class="block px-4 py-3 hover:bg-light border-b border-gray-100">Leather Goods</a>
+                            <a href="#wood" class="block px-4 py-3 hover:bg-light border-b border-gray-100">Wood Keepsakes</a>
+                            <a href="#custom" class="block px-4 py-3 hover:bg-light">Custom Orders</a>
+                        </div>
+                    </li>
+                    <li><a href="#gallery" class="text-text hover:text-accent font-medium transition-smooth">Gallery</a></li>
+                    <li><a href="#about" class="text-text hover:text-accent font-medium transition-smooth">About Us</a></li>
+                    <li><a href="#contact" class="text-text hover:text-accent font-medium transition-smooth">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Center Logo -->
+            <div class="flex flex-col items-center mx-2 md:mx-4">
+                <div class="flex items-center">
+                    <i class="fas fa-mountain text-accent text-2xl md:text-3xl"></i>
+                    <h1 class="ml-2 text-xl md:text-2xl font-playfair font-bold text-primary">Hanos <span class="text-accent">Engraving</span></h1>
+                </div>
+                <p class="hidden md:block text-xs text-gray-500 mt-1">Ethiopian Handcrafted Artistry</p>
+            </div>
+            
+            <!-- Right Icons -->
+            <!-- <div class="hidden lg:flex flex-1 justify-end items-center space-x-4 lg:space-x-6">
+                <div class="relative hidden lg:block">
+                    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-1 focus:ring-accent text-sm">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <a href="account.html" class="text-text hover:text-accent transition-smooth">
+                    <i class="fas fa-user text-lg"></i>
+                </a>
+                <a href="favorites.html" class="text-text hover:text-accent transition-smooth">
+                    <i class="fas fa-heart text-lg"></i>
+                </a>
+                <a href="cart.html" class="text-text hover:text-accent transition-smooth relative">
+                    <i class="fas fa-shopping-cart text-lg"></i>
+                </a>
+            </div> -->
+            
+            <!-- Mobile search and cart icons -->
+            <!-- <div class="flex lg:hidden items-center space-x-4">
+                <a href="cart.html" class="text-text hover:text-accent transition-smooth relative">
+                    <i class="fas fa-shopping-cart text-lg"></i>
+                    <span class="absolute -top-2 -right-2 bg-accent text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
+                </a>
+                <button id="mobile-search-button" class="text-text hover:text-accent transition-smooth">
+                    <i class="fas fa-search text-lg"></i>
+                </button>
+            </div> -->
+        </div>
+        
+        <!-- Mobile search bar -->
+        <div id="mobile-search" class="hidden md:hidden px-4 pb-4">
+            <div class="relative">
+                <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-1 focus:ring-accent text-sm">
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+        </div>
+
+<!-- <div class="relative mx-4">
+  <input type="text" id="search-input" placeholder="Search products..." 
+         class="px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+  <button id="search-button" class="absolute right-3 top-2 text-gray-500 hover:text-yellow-500">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+  </button>
+</div> -->
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-lg z-50 p-6 overflow-y-auto">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center">
+                <i class="fas fa-mountain text-accent text-2xl"></i>
+                <h1 class="ml-2 text-xl font-playfair font-bold text-primary">Hanos <span class="text-accent">Engraving</span></h1>
+            </div>
+            <button id="mobile-menu-close" class="text-text focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        
+        <nav>
+            <ul class="space-y-4">
+                <li><a href="#home" class="block text-text hover:text-accent font-medium transition-smooth py-2">Home</a></li>
+                <li>
+                    <a href="#shop" class="block text-text hover:text-accent font-medium transition-smooth py-2 flex items-center justify-between">
+                        Shop <i class="fas fa-chevron-down text-xs"></i>
+                    </a>
+                    <ul class="pl-4 mt-2 space-y-2 hidden">
+                        <li><a href="#leather" class="block text-text hover:text-accent transition-smooth py-1">Leather Goods</a></li>
+                        <li><a href="#wood" class="block text-text hover:text-accent transition-smooth py-1">Wood Keepsakes</a></li>
+                        <li><a href="#custom" class="block text-text hover:text-accent transition-smooth py-1">Custom Orders</a></li>
+                    </ul>
+                </li>
+                <li><a href="#gallery" class="block text-text hover:text-accent font-medium transition-smooth py-2">Gallery</a></li>
+                <li><a href="#about" class="block text-text hover:text-accent font-medium transition-smooth py-2">About Us</a></li>
+                <li><a href="#contact" class="block text-text hover:text-accent font-medium transition-smooth py-2">Contact</a></li>
+                <!-- <li><a href="account.html" class="block text-text hover:text-accent font-medium transition-smooth py-2">My Account</a></li>
+                <li><a href="favorites.html" class="block text-text hover:text-accent font-medium transition-smooth py-2">Favorites</a></li> -->
+            </ul>
+        </nav>
+        
+        <div class="mt-8 pt-6 border-t border-gray-200">
+            <div class="flex space-x-4">
+                <a href="#" class="text-text hover:text-secondary transition-smooth"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-text hover:text-secondary transition-smooth"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-text hover:text-secondary transition-smooth"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="text-text hover:text-secondary transition-smooth"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <!-- Hero Section with 4 Images -->
+    <section id="home" class="grid grid-cols-1 sm:grid-cols-2 h-auto sm:h-screen">
+        <div class="relative overflow-hidden h-96 sm:h-full">
+            <img src="Image1.png" 
+                 alt="Ethiopian leather craft" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center p-8">
+                <div class="text-center text-white">
+                    <h2 class="text-2xl sm:text-3xl font-playfair mb-4">Authentic Ethiopian Leather</h2>
+                    <p class="mb-4 text-sm sm:text-base">Handcrafted with generations of expertise</p>
+                    <!-- <button data-category="leather" class="category-btn inline-block bg-accent hover:bg-primary text-white px-4 sm:px-6 py-2 rounded transition-smooth text-sm sm:text-base">Explore Collection</button> -->
+                    <a href="#leatherBtn" class="inline-block bg-accent hover:bg-primary text-white px-4 sm:px-6 py-2 rounded transition-smooth text-sm sm:text-base">Explore Collection</a>
+                </div>
+            </div>
+        </div>
+        <div class="relative overflow-hidden h-96 sm:h-full">
+            <img src="image7.png" 
+                 alt="Wood carving" class="w-full h-96 object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center p-8">
+                <div class="text-center text-white">
+                    <h2 class="text-2xl sm:text-3xl font-playfair mb-4">Exquisite Wood Carvings</h2>
+                    <p class="mb-4 text-sm sm:text-base">Traditional techniques meet modern design</p>
+                    <a href="#woodBtn" class="inline-block bg-accent hover:bg-primary text-white px-4 sm:px-6 py-2 rounded transition-smooth text-sm sm:text-base">Discover Artistry</a>
+                </div>
+            </div>
+        </div>
+        <div class="relative overflow-hidden h-96 sm:h-full">
+            <img src="image3.png" 
+                 alt="Leather journal" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center p-8">
+                <div class="text-center text-white">
+                    <h2 class="text-2xl sm:text-3xl font-playfair mb-4">Custom Engraving Services</h2>
+                    <p class="mb-4 text-sm sm:text-base">Personalize your keepsakes with meaningful designs</p>
+                    <a href="#customBtn" class="inline-block bg-accent hover:bg-primary text-white px-4 sm:px-6 py-2 rounded transition-smooth text-sm sm:text-base">Create Yours</a>
+                </div>
+            </div>
+        </div>
+        <div class="relative overflow-hidden h-96 sm:h-full">
+            <img src="image4.png" 
+                 alt="Artisan at work" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center p-8">
+                <div class="text-center text-white">
+                    <h2 class="text-2xl sm:text-3xl font-playfair mb-4">Meet Our Artisans</h2>
+                    <p class="mb-4 text-sm sm:text-base">Preserving Ethiopian heritage through craftsmanship</p>
+                    <a href="#about" class="inline-block bg-accent hover:bg-primary text-white px-4 sm:px-6 py-2 rounded transition-smooth text-sm sm:text-base">Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="py-12 sm:py-20 bg-white">
+        <div class="container mx-auto px-4">
+        <div class="text-center mb-8 sm:mb-16">
+            <h2 class="text-3xl sm:text-4xl font-playfair text-primary mb-4">Featured Products</h2>
+            <p class="max-w-2xl mx-auto text-gray-600 text-sm sm:text-base">Each piece is meticulously handcrafted by Ethiopian artisans using traditional techniques passed down through generations</p>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
+            <button data-category="all" class="category-btn active bg-primary text-white px-4 sm:px-6 py-1 sm:py-2 rounded-full transition-smooth text-xs sm:text-sm">All Products</button>
+            <button data-category="leather" id="leatherBtn" class="category-btn bg-white border border-gray-300 hover:bg-primary hover:text-white px-4 sm:px-6 py-1 sm:py-2 rounded-full transition-smooth text-xs sm:text-sm">Leather Goods</button>
+            <button data-category="wood" id="woodBtn" class="category-btn bg-white border border-gray-300 hover:bg-primary hover:text-white px-4 sm:px-6 py-1 sm:py-2 rounded-full transition-smooth text-xs sm:text-sm">Wood Keepsakes</button>
+            <button data-category="custom" id="customBtn" class="category-btn bg-white border border-gray-300 hover:bg-primary hover:text-white px-4 sm:px-6 py-1 sm:py-2 rounded-full transition-smooth text-xs sm:text-sm">Custom Orders</button>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+            <!-- Leather Product 1 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-smooth hover:shadow-xl" data-category="leather">
+                <div class="product-img h-48 sm:h-64 overflow-hidden">
+                    <img src="image7.png" 
+                         alt="Leather Journal" class="w-full h-full object-cover transition-smooth duration-500">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <div class="text-accent text-xs sm:text-sm uppercase font-medium mb-1">Leather Goods</div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-dark mb-2">Hand-tooled Leather Journal</h3>
+                    <div class="text-primary text-lg sm:text-xl font-semibold mb-3 sm:mb-4">50cm x 60cm - 1200 ETB</div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-accent hover:bg-primary text-white px-3 sm:px-4 py-1 sm:py-2 rounded transition-smooth text-sm">Add to Cart</button>
+                        <button class="text-gray-400 hover:text-red-500 transition-smooth">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leather Product 2 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-smooth hover:shadow-xl" data-category="leather">
+                <div class="product-img h-48 sm:h-64 overflow-hidden">
+                    <img src="image8.png" 
+                         alt="Leather Wallet" class="w-full h-full object-cover transition-smooth duration-500">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <div class="text-accent text-xs sm:text-sm uppercase font-medium mb-1">Leather Goods</div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-dark mb-2">Traditional Ethiopian Wallet</h3>
+                    <div class="text-primary text-lg sm:text-xl font-semibold mb-3 sm:mb-4">70cm x 60cm - 1500 ETB</div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-accent hover:bg-primary text-white px-3 sm:px-4 py-1 sm:py-2 rounded transition-smooth text-sm">Add to Cart</button>
+                        <button class="text-gray-400 hover:text-red-500 transition-smooth">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leather Product 3 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-smooth hover:shadow-xl" data-category="leather">
+                <div class="product-img h-48 sm:h-64 overflow-hidden">
+                    <img src="Image1.png" 
+                         alt="Leather Bag" class="w-full h-full object-cover transition-smooth duration-500">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <div class="text-accent text-xs sm:text-sm uppercase font-medium mb-1">Leather Goods</div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-dark mb-2">Handcrafted Leather Tote</h3>
+                    <div class="text-primary text-lg sm:text-xl font-semibold mb-3 sm:mb-4">90cm x 75cm - 2000 ETB</div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-accent hover:bg-primary text-white px-3 sm:px-4 py-1 sm:py-2 rounded transition-smooth text-sm">Add to Cart</button>
+                        <button class="text-gray-400 hover:text-red-500 transition-smooth">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wood Product 1 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-smooth hover:shadow-xl" data-category="wood">
+                <div class="product-img h-48 sm:h-64 overflow-hidden">
+                    <img src="image10.png" 
+                         alt="Wooden Bowl" class="w-full h-full object-cover transition-smooth duration-500">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <div class="text-accent text-xs sm:text-sm uppercase font-medium mb-1">Wood Keepsakes</div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-dark mb-2">Carved Ethiopian Olivewood Bowl</h3>
+                    <div class="text-primary text-lg sm:text-xl font-semibold mb-3 sm:mb-4">A5 - 300 ETB</div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-accent hover:bg-primary text-white px-3 sm:px-4 py-1 sm:py-2 rounded transition-smooth text-sm">Add to Cart</button>
+                        <button class="text-gray-400 hover:text-red-500 transition-smooth">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wood Product 2 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-smooth hover:shadow-xl" data-category="wood">
+                <div class="product-img h-48 sm:h-64 overflow-hidden">
+                    <img src="image2.png" 
+                         alt="Wooden Box" class="w-full h-full object-cover transition-smooth duration-500">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <div class="text-accent text-xs sm:text-sm uppercase font-medium mb-1">Wood Keepsakes</div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-dark mb-2">Engraved Memory Box</h3>
+                    <div class="text-primary text-lg sm:text-xl font-semibold mb-3 sm:mb-4">A3 - 650 ETB</div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-accent hover:bg-primary text-white px-3 sm:px-4 py-1 sm:py-2 rounded transition-smooth text-sm">Add to Cart</button>
+                        <button class="text-gray-400 hover:text-red-500 transition-smooth">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wood Product 3 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-smooth hover:shadow-xl" data-category="wood">
+                <div class="product-img h-48 sm:h-64 overflow-hidden">
+                    <img src="image12.png" 
+                         alt="Wood Engraving" class="w-full h-full object-cover transition-smooth duration-500">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <div class="text-accent text-xs sm:text-sm uppercase font-medium mb-1">Wood Keepsakes</div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-dark mb-2">Ethiopian Cross Wall Art</h3>
+                    <div class="text-primary text-lg sm:text-xl font-semibold mb-3 sm:mb-4">A2 - 1200 ETB</div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-accent hover:bg-primary text-white px-3 sm:px-4 py-1 sm:py-2 rounded transition-smooth text-sm">Add to Cart</button>
+                        <button class="text-gray-400 hover:text-red-500 transition-smooth">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Custom Product 1 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-smooth hover:shadow-xl" data-category="custom">
+                <div class="product-img h-48 sm:h-64 overflow-hidden">
+                    <img src="image11.png" 
+                         alt="Custom Leather" class="w-full h-full object-cover transition-smooth duration-500">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <div class="text-accent text-xs sm:text-sm uppercase font-medium mb-1">Custom Orders</div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-dark mb-2">Personalized Leather Journal</h3>
+                    <div class="text-primary text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Custom Sizes Available</div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-accent hover:bg-primary text-white px-3 sm:px-4 py-1 sm:py-2 rounded transition-smooth text-sm">Add to Cart</button>
+                        <button class="text-gray-400 hover:text-red-500 transition-smooth">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Custom Product 2 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-smooth hover:shadow-xl" data-category="custom">
+                <div class="product-img h-48 sm:h-64 overflow-hidden">
+                    <img src="image3.png" 
+                         alt="Custom Wood" class="w-full h-full object-cover transition-smooth duration-500">
+                </div>
+                <div class="p-4 sm:p-6">
+                    <div class="text-accent text-xs sm:text-sm uppercase font-medium mb-1">Custom Orders</div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-dark mb-2">Personalized Wood Keepsake</h3>
+                    <div class="text-primary text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Custom Sizes Available</div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-accent hover:bg-primary text-white px-3 sm:px-4 py-1 sm:py-2 rounded transition-smooth text-sm">Add to Cart</button>
+                        <button class="text-gray-400 hover:text-red-500 transition-smooth">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-12 sm:py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-playfair text-primary mb-4">Our Craft in Focus</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 text-sm sm:text-base">Discover the beauty and detail of Ethiopian engraving artistry</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="gallery-item relative rounded-lg overflow-hidden h-48 sm:h-72">
+                    <img src="Image1.png" 
+                         alt="Leather products" class="w-full h-full object-cover transition-smooth duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-smooth">
+                        <h3 class="text-white text-lg sm:text-xl font-playfair">Leather Products</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item relative rounded-lg overflow-hidden h-48 sm:h-72">
+                    <img src="image7.png" 
+                         alt="Wood products" class="w-full h-full object-cover transition-smooth duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-smooth">
+                        <h3 class="text-white text-lg sm:text-xl font-playfair">Wood Products</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item relative rounded-lg overflow-hidden h-48 sm:h-72">
+                    <img src="image4.png" 
+                         alt="Artisan hands" class="w-full h-full object-cover transition-smooth duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-smooth">
+                        <h3 class="text-white text-lg sm:text-xl font-playfair"> Wood Notebook</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item relative rounded-lg overflow-hidden h-48 sm:h-72">
+                    <img src="image11.png" 
+                         alt="Ethiopian patterns" class="w-full h-full object-cover transition-smooth duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-smooth">
+                        <h3 class="text-white text-lg sm:text-xl font-playfair">Wooden Wishbox</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item relative rounded-lg overflow-hidden h-48 sm:h-72">
+                    <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
+                         alt="Workshop" class="w-full h-full object-cover transition-smooth duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-smooth">
+                        <h3 class="text-white text-lg sm:text-xl font-playfair">Our Workshop</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item relative rounded-lg overflow-hidden h-48 sm:h-72">
+                    <img src="image13.png" 
+                         alt="Finished products" class="w-full h-full object-cover transition-smooth duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-smooth">
+                        <h3 class="text-white text-lg sm:text-xl font-playfair">Custom Engraving</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-12 sm:py-20 about-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-playfair text-primary mb-4">Our Heritage & Craftsmanship</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 text-sm sm:text-base">Preserving Ethiopian traditions through exceptional artistry</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <div class="relative">
+                    <div class="rounded-lg overflow-hidden shadow-xl">
+                        <img src="LeatherImage.jpg" 
+                             alt="Ethiopian Artisans" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-white p-4 sm:p-6 rounded-lg shadow-lg max-w-xs">
+                        <h3 class="text-lg sm:text-xl font-playfair text-primary mb-2">Since 2020</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Crafted to tell your story</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-playfair text-dark mb-4 sm:mb-6">Preserving Ethiopian Craft Traditions</h3>
+                    <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
+                        Hanos Engraving began as a small family workshop in Addis Ababa, where master artisans passed down 
+                        the ancient techniques of Ethiopian leatherwork and wood carving. Today, we continue this legacy, 
+                        combining traditional methods with contemporary designs to create timeless pieces that honor our heritage.
+                    </p>
+                    <p class="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
+                        Our craftsmen come from generations of artisans who have perfected the intricate patterns and motifs 
+                        unique to Ethiopian culture. Each piece tells a story, connecting you to the rich history and vibrant 
+                        spirit of Ethiopia.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+                            <div class="text-accent text-2xl sm:text-3xl mb-2 sm:mb-3">
+                                <i class="fas fa-hands"></i>
+                            </div>
+                            <h4 class="text-lg sm:text-xl font-playfair mb-1 sm:mb-2">Handcrafted Excellence</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">Every piece meticulously created by skilled artisans</p>
+                        </div>
+                        <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+                            <div class="text-accent text-2xl sm:text-3xl mb-2 sm:mb-3">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4 class="text-lg sm:text-xl font-playfair mb-1 sm:mb-2">Sustainable Materials</h4>
+                            <p class="text-gray-600 text-sm sm:text-base">Ethically sourced Ethiopian leather and wood</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-accent hover:bg-primary text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg transition-smooth text-sm sm:text-base">
+                        Connect With Our Artisans <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Our Journey Timeline -->
+            <div class="mt-16 sm:mt-24">
+                <h3 class="text-2xl sm:text-3xl font-playfair text-center text-dark mb-8 sm:mb-16">Our Journey Through Time</h3>
+                
+                <div class="timeline relative">
+                    <div class="timeline-item mb-8 sm:mb-16">
+                        <div class="flex flex-col lg:flex-row items-center">
+                            <div class="lg:w-1/2 lg:pr-8 sm:pr-12 mb-6 sm:mb-8 lg:mb-0 lg:text-right">
+                                <div class="timeline-content bg-white p-6 sm:p-8 rounded-lg shadow-lg relative">
+                                    <h4 class="text-xl sm:text-2xl font-playfair text-primary mb-2 sm:mb-3">2020 - Humble Beginnings</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">
+                                        Started in a small workshop in Addis Ababa, crafting custom leather journals and
+                                        carved wooden crosses rooted in Ethiopian tradition.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 flex justify-center">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-48 sm:w-64 h-48 sm:h-64 flex items-center justify-center text-gray-500">
+                                    Workshop Image
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item mb-8 sm:mb-16">
+                        <div class="flex flex-col lg:flex-row items-center">
+                            <div class="lg:w-1/2 lg:order-last lg:pl-8 sm:pl-12 mb-6 sm:mb-8 lg:mb-0">
+                                <div class="timeline-content bg-white p-6 sm:p-8 rounded-lg shadow-lg relative">
+                                    <h4 class="text-xl sm:text-2xl font-playfair text-primary mb-2 sm:mb-3">2021 - Local Recognition</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">
+                                        Featured at Addis Ababa's Artisan Expo. Expanded operations with a growing team of skilled
+                                        engravers and woodworkers, blending heritage with innovation.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 flex justify-center">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-48 sm:w-64 h-48 sm:h-64 flex items-center justify-center text-gray-500">
+                                    Award Image
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item mb-8 sm:mb-16">
+                        <div class="flex flex-col lg:flex-row items-center">
+                            <div class="lg:w-1/2 lg:pr-8 sm:pr-12 mb-6 sm:mb-8 lg:mb-0 lg:text-right">
+                                <div class="timeline-content bg-white p-6 sm:p-8 rounded-lg shadow-lg relative">
+                                    <h4 class="text-xl sm:text-2xl font-playfair text-primary mb-2 sm:mb-3">2022 - Digital Expansion</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">
+                                        Launched the Hanos Engraving Instagram page to showcase personalized gifts and home décor. Orders began
+                                        reaching customers across Ethiopia and the diaspora.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 flex justify-center">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-48 sm:w-64 h-48 sm:h-64 flex items-center justify-center text-gray-500">
+                                    Global Image
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="flex flex-col lg:flex-row items-center">
+                            <div class="lg:w-1/2 lg:order-last lg:pl-8 sm:pl-12 mb-6 sm:mb-8 lg:mb-0">
+                                <div class="timeline-content bg-white p-6 sm:p-8 rounded-lg shadow-lg relative">
+                                    <h4 class="text-xl sm:text-2xl font-playfair text-primary mb-2 sm:mb-3">Present Day - Legacy</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">
+                                        Hanos Engraving is now preparing to expand globally—bringing Ethiopian craftsmanship
+                                        to the world through custom wood and leather engraving.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 flex justify-center">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-48 sm:w-64 h-48 sm:h-64 flex items-center justify-center text-gray-500">
+                                    Artisan Training
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 sm:py-20 contact-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-playfair text-primary mb-4">Connect With Us</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 text-sm sm:text-base">We'd love to hear from you - whether you have questions about our products or want to commission a custom piece</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+                    <h3 class="text-xl sm:text-2xl font-playfair text-dark mb-4 sm:mb-6">Send Us a Message</h3>
+                    
+                    <form>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-1 sm:mb-2 text-sm sm:text-base">Your Name</label>
+                                <input type="text" id="name" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm sm:text-base">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-1 sm:mb-2 text-sm sm:text-base">Email Address</label>
+                                <input type="email" id="email" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm sm:text-base">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4 sm:mb-6">
+                            <label for="subject" class="block text-gray-700 mb-1 sm:mb-2 text-sm sm:text-base">Subject</label>
+                            <input type="text" id="subject" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm sm:text-base">
+                        </div>
+                        
+                        <div class="mb-4 sm:mb-6">
+                            <label for="message" class="block text-gray-700 mb-1 sm:mb-2 text-sm sm:text-base">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm sm:text-base"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-accent hover:bg-primary text-white px-6 sm:px-8 py-2 sm:py-3 rounded-lg transition-smooth w-full sm:w-auto text-sm sm:text-base">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-6 sm:mb-8">
+                        <h3 class="text-xl sm:text-2xl font-playfair text-dark mb-4 sm:mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-4 sm:space-y-6">
+                            <div class="flex">
+                                <div class="text-accent text-lg sm:text-xl w-8 sm:w-10">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base sm:text-lg font-semibold text-dark mb-1">Our Workshop</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">Bole Road, Addis Ababa<br>Ethiopia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="text-accent text-lg sm:text-xl w-8 sm:w-10">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base sm:text-lg font-semibold text-dark mb-1">Phone & WhatsApp</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">+251 911 234 567<br>+251 912 345 678</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="text-accent text-lg sm:text-xl w-8 sm:w-10">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base sm:text-lg font-semibold text-dark mb-1">Email Address</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">contact@Hanosengraving.com<br>orders@Hanosengraving.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="text-accent text-lg sm:text-xl w-8 sm:w-10">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base sm:text-lg font-semibold text-dark mb-1">Working Hours</h4>
+                                    <p class="text-gray-600 text-sm sm:text-base">Monday-Friday: 9AM - 6PM EAT<br>Saturday: 10AM - 4PM EAT</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
+                        <h3 class="text-xl sm:text-2xl font-playfair text-dark mb-4 sm:mb-6">Visit Our Workshop</h3>
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48 sm:h-64 flex items-center justify-center text-gray-500">
+                                Map of Addis Ababa Location
+                            </div>
+                        </div>
+                        <p class="mt-3 sm:mt-4 text-gray-600 text-sm sm:text-base">
+                            We welcome visitors to our workshop in Addis Ababa. Experience the craftsmanship firsthand 
+                            and see our artisans at work. Please schedule your visit in advance.
+                        </p>
+                        <button class="mt-3 sm:mt-4 bg-primary text-white px-4 sm:px-6 py-1 sm:py-2 rounded-lg transition-smooth hover:bg-accent text-sm sm:text-base">
+                            Schedule a Visit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-12 sm:pt-16 pb-6 sm:pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 text-center">
+                <div>
+                    <div class="flex items-center mb-3 sm:mb-4">
+                        <i class="fas fa-mountain text-accent text-xl sm:text-2xl"></i>
+                        <h3 class="ml-2 text-lg sm:text-xl font-playfair">Hanos Engraving</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">Bringing Ethiopian craftsmanship to the world through exquisite leather and wood engraving.</p>
+                    <div class="flex space-x-3 sm:space-x-4 justify-center lg:justify-start">
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-smooth"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-smooth"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-smooth"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-smooth"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="sm:text-lg font-semibold mb-3 sm:mb-4 relative pb-2">Quick Links</h4>
+                    <ul class="space-y-1 sm:space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Home</a></li>
+                        <li><a href="#shop" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Shop</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Gallery</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4 relative pb-2">Shop Categories</h4>
+                    <ul class="space-y-1 sm:space-y-2">
+                        <li><a href="#leather" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Leather Goods</a></li>
+                        <li><a href="#wood" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Wood Keepsakes</a></li>
+                        <li><a href="#custom" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Custom Orders</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 sm:pt-8 text-center text-gray-400 text-sm sm:text-base">
+                <p>&copy; 2023 Hanos Engraving. All Rights Reserved. | Handcrafted in Ethiopia, Shared with the World</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileSearchButton = document.getElementById('mobile-search-button');
+        const mobileSearch = document.getElementById('mobile-search');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+
+        mobileMenuOverlay.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+
+        mobileSearchButton.addEventListener('click', function() {
+            mobileSearch.classList.toggle('hidden');
+        });
+
+        // Mobile menu dropdown functionality
+        const shopLink = document.querySelector('#mobile-menu a[href="#shop"]');
+        if (shopLink) {
+            shopLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdown = this.nextElementSibling;
+                dropdown.classList.toggle('hidden');
+                const icon = this.querySelector('i');
+                if (dropdown.classList.contains('hidden')) {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        }
+
+        // Category filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active', 'bg-primary', 'text-white'));
+                    categoryBtns.forEach(b => b.classList.add('bg-white', 'border', 'border-gray-300'));
+                    
+                    // Add active class to clicked button
+                    this.classList.remove('bg-white', 'border', 'border-gray-300');
+                    this.classList.add('active', 'bg-primary', 'text-white');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter products
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.remove('active');
+                            mobileMenuOverlay.classList.add('hidden');
+                            document.body.style.overflow = '';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

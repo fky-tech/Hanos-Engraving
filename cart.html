@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Hanos Engraving</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#D2B48C',
+                        accent: '#A0522D',
+                        light: '#F5F5DC',
+                        dark: '#3E2723',
+                        text: '#333333',
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-poppins text-text bg-light;
+            }
+            h1, h2, h3, h4 {
+                @apply font-playfair font-semibold;
+            }
+        }
+        @layer utilities {
+            .transition-smooth {
+                transition: all 0.3s ease;
+            }
+            .dropdown:hover .dropdown-content {
+                @apply opacity-100 visible translate-y-0;
+            }
+            .ethiopian-pattern {
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a0522d' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+            .mobile-menu {
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            .mobile-menu.active {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="ethiopian-pattern">
+    <!-- Header & Navigation (Same as index.html) -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="bg-dark text-white text-center py-2 text-sm hidden md:block">
+            <p>FREE SHIPPING ON ORDERS OVER $100 | ETHIOPIAN HANDCRAFTED MASTERPIECES</p>
+        </div>
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="lg:hidden text-text focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Left Navigation - Desktop -->
+            <nav class="hidden lg:flex flex-1">
+                <ul class="flex space-x-4 lg:space-x-8">
+                    <li><a href="index.html" class="text-text hover:text-accent font-medium transition-smooth">Home</a></li>
+                    <li class="dropdown relative">
+                        <a href="index.html#shop" class="text-text hover:text-accent font-medium transition-smooth flex items-center">
+                            Shop <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <div class="dropdown-content absolute top-full left-0 bg-white min-w-[200px] shadow-lg rounded-md mt-2 opacity-0 invisible translate-y-4 transition-smooth">
+                            <a href="index.html#leather" class="block px-4 py-3 hover:bg-light border-b border-gray-100">Leather Goods</a>
+                            <a href="index.html#wood" class="block px-4 py-3 hover:bg-light border-b border-gray-100">Wood Keepsakes</a>
+                            <a href="index.html#custom" class="block px-4 py-3 hover:bg-light">Custom Orders</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#gallery" class="text-text hover:text-accent font-medium transition-smooth">Gallery</a></li>
+                    <li><a href="index.html#about" class="text-text hover:text-accent font-medium transition-smooth">About Us</a></li>
+                    <li><a href="index.html#contact" class="text-text hover:text-accent font-medium transition-smooth">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Center Logo -->
+            <div class="flex flex-col items-center mx-2 md:mx-4">
+                <div class="flex items-center">
+                    <i class="fas fa-mountain text-accent text-2xl md:text-3xl"></i>
+                    <h1 class="ml-2 text-xl md:text-2xl font-playfair font-bold text-primary">Hanos <span class="text-accent">Engraving</span></h1>
+                </div>
+                <p class="hidden md:block text-xs text-gray-500 mt-1">Ethiopian Handcrafted Artistry</p>
+            </div>
+            
+            <!-- Right Icons -->
+            <div class="hidden lg:flex flex-1 justify-end items-center space-x-4 lg:space-x-6">
+                <div class="relative hidden lg:block">
+                    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-1 focus:ring-accent text-sm">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <a href="account.html" class="text-text hover:text-accent transition-smooth">
+                    <i class="fas fa-user text-lg"></i>
+                </a>
+                <a href="favorites.html" class="text-text hover:text-accent transition-smooth">
+                    <i class="fas fa-heart text-lg"></i>
+                </a>
+                <a href="cart.html" class="text-text hover:text-accent transition-smooth relative">
+                    <i class="fas fa-shopping-cart text-lg"></i>
+                    <!-- <span class="absolute -top-2 -right-2 bg-accent text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span> -->
+                </a>
+            </div>
+            
+            <!-- Mobile search and cart icons -->
+            <div class="flex lg:hidden items-center space-x-4">
+                <a href="cart.html" class="text-text hover:text-accent transition-smooth relative">
+                    <i class="fas fa-shopping-cart text-lg"></i>
+                    <span class="absolute -top-2 -right-2 bg-accent text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
+                </a>
+                <button id="mobile-search-button" class="text-text hover:text-accent transition-smooth">
+                    <i class="fas fa-search text-lg"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile search bar -->
+        <div id="mobile-search" class="hidden md:hidden px-4 pb-4">
+            <div class="relative">
+                <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-1 focus:ring-accent text-sm">
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Same as index.html) -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-lg z-50 p-6 overflow-y-auto">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center">
+                <i class="fas fa-mountain text-accent text-2xl"></i>
+                <h1 class="ml-2 text-xl font-playfair font-bold text-primary">Hanos <span class="text-accent">Engraving</span></h1>
+            </div>
+            <button id="mobile-menu-close" class="text-text focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        
+        <nav>
+            <ul class="space-y-4">
+                <li><a href="index.html" class="block text-text hover:text-accent font-medium transition-smooth py-2">Home</a></li>
+                <li>
+                    <a href="index.html#shop" class="block text-text hover:text-accent font-medium transition-smooth py-2 flex items-center justify-between">
+                        Shop <i class="fas fa-chevron-down text-xs"></i>
+                    </a>
+                    <ul class="pl-4 mt-2 space-y-2 hidden">
+                        <li><a href="index.html#leather" class="block text-text hover:text-accent transition-smooth py-1">Leather Goods</a></li>
+                        <li><a href="index.html#wood" class="block text-text hover:text-accent transition-smooth py-1">Wood Keepsakes</a></li>
+                        <li><a href="index.html#custom" class="block text-text hover:text-accent transition-smooth py-1">Custom Orders</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#gallery" class="block text-text hover:text-accent font-medium transition-smooth py-2">Gallery</a></li>
+                <li><a href="index.html#about" class="block text-text hover:text-accent font-medium transition-smooth py-2">About Us</a></li>
+                <li><a href="index.html#contact" class="block text-text hover:text-accent font-medium transition-smooth py-2">Contact</a></li>
+                <li><a href="account.html" class="block text-text hover:text-accent font-medium transition-smooth py-2">My Account</a></li>
+                <li><a href="favorites.html" class="block text-text hover:text-accent font-medium transition-smooth py-2">Favorites</a></li>
+            </ul>
+        </nav>
+        
+        <div class="mt-8 pt-6 border-t border-gray-200">
+            <div class="flex space-x-4">
+                <a href="#" class="text-text hover:text-secondary transition-smooth"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-text hover:text-secondary transition-smooth"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-text hover:text-secondary transition-smooth"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="text-text hover:text-secondary transition-smooth"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <!-- Cart Content -->
+    <section class="py-12 sm:py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-12">
+                <h1 class="text-3xl sm:text-4xl font-playfair text-primary mb-2">Your Shopping Cart</h1>
+                <p class="text-gray-600">Review and checkout your selected items</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
+                <!-- Cart Items -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <!-- Cart Header -->
+                        <div class="hidden sm:grid grid-cols-12 bg-gray-100 p-4 font-medium text-dark">
+                            <div class="col-span-5">Product</div>
+                            <div class="col-span-2 text-center">Price</div>
+                            <div class="col-span-3 text-center">Quantity</div>
+                            <div class="col-span-2 text-right">Subtotal</div>
+                        </div>
+                        
+                        <!-- Cart Item 1 -->
+                        <div class="border-b border-gray-200 p-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                                <div class="sm:col-span-5 flex items-center">
+                                    <button class="text-gray-400 hover:text-red-500 transition-smooth mr-4">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                    <div class="flex items-center">
+                                        <div class="w-16 h-16 sm:w-20 sm:h-20 overflow-hidden rounded-lg mr-4">
+                                            <img src="image7.png" 
+                                                 alt="Hand-tooled Leather Journal" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h3 class="text-sm sm:text-base font-medium">Hand-tooled Leather Journal</h3>
+                                            <p class="text-gray-500 text-xs sm:text-sm">50cm x 60cm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2 text-center">
+                                    <span class="text-primary font-medium">1200 ETB</span>
+                                </div>
+                                <div class="sm:col-span-3">
+                                    <div class="flex items-center justify-center sm:justify-start">
+                                        <button class="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-l hover:bg-gray-100 transition-smooth">
+                                            <i class="fas fa-minus text-xs"></i>
+                                        </button>
+                                        <input type="number" value="1" min="1" class="w-12 h-8 border-t border-b border-gray-300 text-center focus:outline-none">
+                                        <button class="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-r hover:bg-gray-100 transition-smooth">
+                                            <i class="fas fa-plus text-xs"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2 text-right">
+                                    <span class="text-primary font-medium">1200 ETB</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cart Item 2 -->
+                        <div class="border-b border-gray-200 p-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                                <div class="sm:col-span-5 flex items-center">
+                                    <button class="text-gray-400 hover:text-red-500 transition-smooth mr-4">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                    <div class="flex items-center">
+                                        <div class="w-16 h-16 sm:w-20 sm:h-20 overflow-hidden rounded-lg mr-4">
+                                            <img src="image10.png" 
+                                                 alt="Carved Ethiopian Olivewood Bowl" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h3 class="text-sm sm:text-base font-medium">Carved Ethiopian Olivewood Bowl</h3>
+                                            <p class="text-gray-500 text-xs sm:text-sm">A5</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2 text-center">
+                                    <span class="text-primary font-medium">300 ETB</span>
+                                </div>
+                                <div class="sm:col-span-3">
+                                    <div class="flex items-center justify-center sm:justify-start">
+                                        <button class="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-l hover:bg-gray-100 transition-smooth">
+                                            <i class="fas fa-minus text-xs"></i>
+                                        </button>
+                                        <input type="number" value="2" min="1" class="w-12 h-8 border-t border-b border-gray-300 text-center focus:outline-none">
+                                        <button class="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-r hover:bg-gray-100 transition-smooth">
+                                            <i class="fas fa-plus text-xs"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2 text-right">
+                                    <span class="text-primary font-medium">600 ETB</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cart Item 3 -->
+                        <div class="p-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                                <div class="sm:col-span-5 flex items-center">
+                                    <button class="text-gray-400 hover:text-red-500 transition-smooth mr-4">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                    <div class="flex items-center">
+                                        <div class="w-16 h-16 sm:w-20 sm:h-20 overflow-hidden rounded-lg mr-4">
+                                            <img src="image2.png" 
+                                                 alt="Engraved Memory Box" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h3 class="text-sm sm:text-base font-medium">Engraved Memory Box</h3>
+                                            <p class="text-gray-500 text-xs sm:text-sm">A3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2 text-center">
+                                    <span class="text-primary font-medium">650 ETB</span>
+                                </div>
+                                <div class="sm:col-span-3">
+                                    <div class="flex items-center justify-center sm:justify-start">
+                                        <button class="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-l hover:bg-gray-100 transition-smooth">
+                                            <i class="fas fa-minus text-xs"></i>
+                                        </button>
+                                        <input type="number" value="1" min="1" class="w-12 h-8 border-t border-b border-gray-300 text-center focus:outline-none">
+                                        <button class="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-r hover:bg-gray-100 transition-smooth">
+                                            <i class="fas fa-plus text-xs"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="sm:col-span-2 text-right">
+                                    <span class="text-primary font-medium">650 ETB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart Actions -->
+                    <div class="flex flex-col sm:flex-row justify-end mt-6 sm:mt-8 gap-4">
+                        <!-- <div class="flex">
+                            <input type="text" placeholder="Coupon code" class="px-4 py-2 border border-gray-300 rounded-l focus:outline-none focus:ring-1 focus:ring-accent w-full sm:w-64">
+                            <button class="bg-accent hover:bg-primary text-white px-6 py-2 rounded-r transition-smooth">Apply</button>
+                        </div> -->
+                        <button class="bg-gray-200 hover:bg-gray-300 text-dark px-6 py-2 rounded transition-smooth">
+                            <i class="fas fa-sync-alt mr-2"></i> Update Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Cart Summary -->
+                <div>
+                    <div class="bg-white rounded-lg shadow-md p-6 sticky top-4">
+                        <h3 class="text-xl font-playfair text-primary mb-4">Cart Summary</h3>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Subtotal</span>
+                                <span class="font-medium">2450 ETB</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Shipping</span>
+                                <span class="font-medium">Free</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Tax</span>
+                                <span class="font-medium">0 ETB</span>
+                            </div>
+                            <div class="border-t border-gray-200 pt-4 flex justify-between">
+                                <span class="font-semibold">Total</span>
+                                <span class="text-primary font-bold">2450 ETB</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-primary hover:bg-accent text-white py-3 rounded-lg transition-smooth font-medium">
+                            Proceed to Checkout
+                        </button>
+                        
+                        <div class="mt-4 text-center">
+                            <p class="text-gray-500 text-sm">or</p>
+                            <a href="index.html#shop" class="text-accent hover:text-primary font-medium transition-smooth inline-block mt-2">
+                                Continue Shopping <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Methods -->
+                    <div class="mt-6 bg-white rounded-lg shadow-md p-6">
+                        <h4 class="font-medium mb-3">We Accept</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="bg-gray-100 p-2 rounded">
+                                <i class="fab fa-cc-visa text-2xl text-blue-800"></i>
+                            </div>
+                            <div class="bg-gray-100 p-2 rounded">
+                                <i class="fab fa-cc-mastercard text-2xl text-red-700"></i>
+                            </div>
+                            <div class="bg-gray-100 p-2 rounded">
+                                <i class="fab fa-cc-paypal text-2xl text-blue-500"></i>
+                            </div>
+                            <div class="bg-gray-100 p-2 rounded">
+                                <i class="fas fa-money-bill-wave text-2xl text-green-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-dark text-white pt-12 sm:pt-16 pb-6 sm:pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12 text-center">
+                <div>
+                    <div class="flex items-center mb-3 sm:mb-4">
+                        <i class="fas fa-mountain text-accent text-xl sm:text-2xl"></i>
+                        <h3 class="ml-2 text-lg sm:text-xl font-playfair">Hanos Engraving</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">Bringing Ethiopian craftsmanship to the world through exquisite leather and wood engraving.</p>
+                    <div class="flex space-x-3 sm:space-x-4 justify-center lg:justify-start">
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-smooth"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-smooth"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-smooth"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-secondary transition-smooth"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="sm:text-lg font-semibold mb-3 sm:mb-4 relative pb-2">Quick Links</h4>
+                    <ul class="space-y-1 sm:space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Home</a></li>
+                        <li><a href="index.html#shop" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Shop</a></li>
+                        <li><a href="index.html#gallery" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Gallery</a></li>
+                        <li><a href="index.html#about" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">About Us</a></li>
+                        <li><a href="index.html#contact" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4 relative pb-2">Shop Categories</h4>
+                    <ul class="space-y-1 sm:space-y-2">
+                        <li><a href="index.html#leather" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Leather Goods</a></li>
+                        <li><a href="index.html#wood" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Wood Keepsakes</a></li>
+                        <li><a href="index.html#custom" class="text-gray-300 hover:text-secondary transition-smooth text-sm sm:text-base">Custom Orders</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 sm:pt-8 text-center text-gray-400 text-sm sm:text-base">
+                <p>&copy; 2023 Hanos Engraving. All Rights Reserved. | Handcrafted in Ethiopia, Shared with the World</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality (Same as index.html)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileSearchButton = document.getElementById('mobile-search-button');
+        const mobileSearch = document.getElementById('mobile-search');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+
+        mobileMenuOverlay.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+
+        mobileSearchButton.addEventListener('click', function() {
+            mobileSearch.classList.toggle('hidden');
+        });
+
+        // Mobile menu dropdown functionality
+        const shopLink = document.querySelector('#mobile-menu a[href="index.html#shop"]');
+        if (shopLink) {
+            shopLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdown = this.nextElementSibling;
+                dropdown.classList.toggle('hidden');
+                const icon = this.querySelector('i');
+                if (dropdown.classList.contains('hidden')) {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
